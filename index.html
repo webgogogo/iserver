@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p link="p1.html">链接1</p>
+  <p link="p2.html">链接2</p>
+  <p link="p3.html">链接3</p>
+  <div></div>
+  <script>
+    let info = document.querySelector('div')
+    document.body.addEventListener('click', function (e) {
+      if (e.target.nodeName === 'P') {
+        let link = e.target.getAttribute('link');
+        showPage(link);
+        history.pushState(link, null, link);
+      }
+    })
+    window.addEventListener("load", function () {
+      showPage(history.state);
+      setTimeout(function () {
+        window.addEventListener("popstate", function (e) {
+          showPage(e.state);
+        });
+      }, 1000);
+    });
+
+    function showPage(data) {
+      info.innerText = '当前页面：' + data;
+    }
+  </script>
+</body>
+
+</html>

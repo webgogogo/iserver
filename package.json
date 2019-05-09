@@ -1,0 +1,17 @@
+{
+  "name": "LOCAL SERVER",
+  "version": "1.0.0",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.16.2",
+    "http-proxy-middleware": "^0.17.4"
+  },
+  "scripts": {
+    "dev": "node server dev",
+    "prod": "node server prod"
+  },
+  "author": "HENGER.WANG",
+  "license": "ISC",
+  "description": "1、复制server.js和package.json到项目根目录;2、命令行工具在项目目录执行npm install安装依赖包；3、启动服务node server"
+}
